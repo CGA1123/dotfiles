@@ -1,0 +1,6 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhist_cnt =4
+let g:netrw_dirhist_1='/Users/christiangregg/dev/F29SO'
+let g:netrw_dirhist_2='/Users/christiangregg/dev/F29SO/app'
+let g:netrw_dirhist_3='/Users/christiangregg/dev/F29SO/app/controllers'
+let g:netrw_dirhist_4='/Users/christiangregg/dev/F29SO'

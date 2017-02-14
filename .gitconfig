@@ -1,0 +1,19 @@
+[filter "lfs"]
+	clean = git-lfs clean %f
+	smudge = git-lfs smudge %f
+	required = true
+[user]
+	email = c_arlt@hotmail.com
+	name = Christian Gregg
+	signingkey = 7DBABDF0
+[color]
+	ui = auto
+[commit]
+	gpgsign = true
+[core]
+	editor = /usr/local/bin/vim
+	excludesfile = /Users/christiangregg/.gitignore_global
+[github]
+	user = CGA1123
+[ghi]
+	token = !security find-internet-password -a CGA1123 -s github.com -l 'ghi token' -w
