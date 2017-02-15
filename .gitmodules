@@ -1,6 +1,6 @@
 [submodule "oh-my-zsh"]
 	path = .oh-my-zsh
-	url = https://github.com/robbyrussell/oh-my-zsh.git
+	url = https://github.com/CGA1123/oh-my-zsh.git
 
 [submodule "nerdtree"]
 	path = .vim/bundle/nerdtree
