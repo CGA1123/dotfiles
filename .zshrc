@@ -103,6 +103,9 @@ export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
 export PATH="/usr/local/sbin:$PATH"
 export PATH="$HOME/.local/bin:$PATH:$HOME/bin"
 
+# Tell GPG what to use to prompt password
+export GPG_TTY=$(tty)
+
 DEFAULT_USER='christiangregg'
 
 alias clr='clear'
