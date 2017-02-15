@@ -27,3 +27,6 @@ let NERDTreeShowHidden = 1
 " Don't clutter working dir with swp files
 set swapfile
 set dir=~/tmp
+
+" Fix blotchy background when using vim within tmux
+set t_ut=
