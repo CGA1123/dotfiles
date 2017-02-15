@@ -82,23 +82,6 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-apps() {
-  if [[ $# -eq 1 ]]; then
-    if [[ $1 =~ .app$ ]]; then
-      open /Applications/$1 &> /dev/null
-    else
-      open /Applications/$1.app &> /dev/null
-    fi
-
-    if [[ $? != 0 ]]; then
-      printf "Error: $1 not found.\n"
-    fi
-  else
-    printf "Usage: app <appname>\n"
-  fi
-}
-alias app='apps'
-
 export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
 export PATH="/usr/local/sbin:$PATH"
 export PATH="$HOME/.local/bin:$PATH:$HOME/bin"
@@ -106,14 +89,17 @@ export PATH="$HOME/.local/bin:$PATH:$HOME/bin"
 # Tell GPG what to use to prompt password
 export GPG_TTY=$(tty)
 
+# Tell tmux to behave, make vim pretty
+export TERM=xterm-256color
+
 DEFAULT_USER='christiangregg'
 
+# Type `clear` takes too long...
 alias clr='clear'
-alias psql="'/Applications/Postgres.app/Contents/Versions/9.5/bin'/psql -p5432"
-alias mvim='/Applications/MacVim.app/Contents/MacOS/Vim -g'
-alias airport='/System/Library/PrivateFrameworks/Apple80211.framework/Versions/Current/Resources/airport'
+
+# Cheeky nmap aliases
 alias nscan='nmap -sP'
-alias localip='ipconfig getifaddr en0'
-alias publicip='wget http://ipinfo.io/ip -q0 -'
 alias nmapme='sudo nmap -T4 -Pn -A -v'
-alias lc='wc -l'
+
+# Find your public ip
+alias publicip='wget http://ipinfo.io/ip -q0 -'
