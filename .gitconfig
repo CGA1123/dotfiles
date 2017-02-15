@@ -11,7 +11,7 @@
 [commit]
 	gpgsign = true
 [core]
-	editor = /usr/local/bin/vim
+	editor = /usr/bin/env vim
 	excludesfile = /Users/christiangregg/.gitignore_global
 [github]
 	user = CGA1123

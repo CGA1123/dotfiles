@@ -1,5 +1,5 @@
 # Path to your oh-my-zsh installation.
-export ZSH=/Users/christiangregg/.oh-my-zsh
+export ZSH=~/.oh-my-zsh
 
 # Set name of the theme to load.
 # Look in ~/.oh-my-zsh/themes/
@@ -101,7 +101,7 @@ alias app='apps'
 
 export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
 export PATH="/usr/local/sbin:$PATH"
-export PATH="$PATH:$HOME/bin"
+export PATH="$HOME/.local/bin:$PATH:$HOME/bin"
 
 DEFAULT_USER='christiangregg'
 
@@ -114,4 +114,3 @@ alias localip='ipconfig getifaddr en0'
 alias publicip='wget http://ipinfo.io/ip -q0 -'
 alias nmapme='sudo nmap -T4 -Pn -A -v'
 alias lc='wc -l'
-test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
