@@ -9,7 +9,7 @@ DOTFILE_PATH = Dir.pwd
 puts ".dotfile is at #{DOTFILE_PATH}..."
 puts "symlinking dotfiles..."
 FILES.each do |file|
-    puts "Linking: #{DOTFILE_PATH}/#{file} to ~/.#{file}"
+    puts "Linking: ~/.#{file} -> {DOTFILE_PATH}/#{file}"
     `ln -s #{DOTFILE_PATH}/#{file} ~/.#{file}` 
 end
 
