@@ -38,3 +38,16 @@ autocmd BufWinEnter * match ExtraWhitespace /\s\+$/
 autocmd InsertEnter * match ExtraWhitespace /\s\+\%#\@<!$/
 autocmd InsertLeave * match ExtraWhitespace /\s\+$/
 autocmd BufWinLeave * call clearmatches()
+
+" nerdtree-git-plugin symbols
+let g:NERDTreeIndicatorMapCustom = {
+    \ "Modified"  : "🔧",
+    \ "Staged"    : "📗",
+    \ "Untracked" : "🌟",
+    \ "Renamed"   : "➜",
+    \ "Unmerged"  : "═",
+    \ "Deleted"   : "🔥",
+    \ "Dirty"     : "🔧",
+    \ "Clean"     : "💎",
+    \ "Unknown"   : "?"
+    \ }
