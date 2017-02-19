@@ -84,7 +84,7 @@ source $ZSH/oh-my-zsh.sh
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
 export PATH="/usr/local/sbin:$PATH"
-export PATH="$HOME/.local/bin:$PATH:$HOME/bin"
+export PATH="$HOME/local/bin:$PATH:$HOME/bin"
 
 # Tell GPG what to use to prompt password
 export GPG_TTY=$(tty)
