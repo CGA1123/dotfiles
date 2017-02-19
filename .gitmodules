@@ -34,3 +34,6 @@
 [submodule "vim-vinegar"]
 	path = vim/bundle/vim-vinegar
 	url = https://github.com/tpope/vim-vinegar
+[submodule "vim/bundle/breezy"]
+	path = vim/bundle/breezy
+	url = https://github.com/fneu/breezy
