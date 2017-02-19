@@ -1,7 +1,7 @@
 #!/usr/bin/env ruby
 
 # Array of files that should not be symlinked
-IGNORE = %w[. .. .git install README.md]
+IGNORE = %w[. .. .git install README.md .gitmodules]
 
 # Get all files in out directory
 FILES = Dir.glob("*", File::FNM_DOTMATCH) - IGNORE
@@ -9,8 +9,8 @@ DOTFILE_PATH = Dir.pwd
 puts ".dotfile is at #{DOTFILE_PATH}..."
 puts "symlinking dotfiles..."
 FILES.each do |file|
-    puts "Linking: #{DOTFILE_PATH}/#{file} to ~/#{file}"
-    `ln -s #{DOTFILE_PATH}/#{file} ~/#{file}` 
+    puts "Linking: #{DOTFILE_PATH}/#{file} to ~/.#{file}"
+    `ln -s #{DOTFILE_PATH}/#{file} ~/.#{file}` 
 end
 
 puts "DONE."

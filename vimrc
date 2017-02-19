@@ -18,9 +18,6 @@ let g:airline#extensions#tabline#buffer_nr_show = 1
 let g:airline_powerline_fonts = 1
 let g:airline_theme='breezy'
 
-" Show hidden files in NERDTree
-let NERDTreeShowHidden = 1
-
 " Show hidden file in ctrlp
 let g:ctrlp_show_hidden = 1
 
@@ -39,15 +36,6 @@ autocmd InsertEnter * match ExtraWhitespace /\s\+\%#\@<!$/
 autocmd InsertLeave * match ExtraWhitespace /\s\+$/
 autocmd BufWinLeave * call clearmatches()
 
-" nerdtree-git-plugin symbols
-let g:NERDTreeIndicatorMapCustom = {
-    \ "Modified"  : "🔧",
-    \ "Staged"    : "📗",
-    \ "Untracked" : "🌟",
-    \ "Renamed"   : "➜",
-    \ "Unmerged"  : "═",
-    \ "Deleted"   : "🔥",
-    \ "Dirty"     : "🔧",
-    \ "Clean"     : "💎",
-    \ "Unknown"   : "?"
-    \ }
+" Stop netrm from creating annoying file
+let g:netrw_dirhistmax = 0
+
