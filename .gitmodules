@@ -37,3 +37,12 @@
 [submodule "vim/bundle/breezy"]
 	path = vim/bundle/breezy
 	url = https://github.com/fneu/breezy
+[submodule "tmux/plugins/tpm"]
+	path = /Users/christiangregg/.dotfiles/tmux/plugins/tpm
+	url = https://github.com/tmux-plugins/tpm
+[submodule "vim/bundle/vim-tmux-focus-events"]
+	path = vim/bundle/vim-tmux-focus-events
+	url = git://github.com/tmux-plugins/vim-tmux-focus-events.git
+[submodule "vim/bundle/tmuxline.vim"]
+	path = vim/bundle/tmuxline.vim
+	url = https://github.com/edkolev/tmuxline.vim

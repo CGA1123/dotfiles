@@ -3,6 +3,11 @@ syntax on
 filetype plugin indent on
 set number
 
+" Set autoread
+set autoread
+
+" Use tmuxline
+let g:airline#extensions#tmuxline#enabled = 1
 " Breezy (theme)
 set background=dark
 set termguicolors
