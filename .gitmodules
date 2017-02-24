@@ -35,7 +35,7 @@
 	path = vim/bundle/breezy
 	url = https://github.com/fneu/breezy
 [submodule "tmux/plugins/tpm"]
-	path = /Users/christiangregg/.dotfiles/tmux/plugins/tpm
+	path = tmux/plugins/tpm
 	url = https://github.com/tmux-plugins/tpm
 [submodule "vim/bundle/vim-tmux-focus-events"]
 	path = vim/bundle/vim-tmux-focus-events
