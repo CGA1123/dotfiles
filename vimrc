@@ -6,6 +6,16 @@ set number
 " Set autoread
 set autoread
 
+" tabs are bad
+set softtabstop=2
+set shiftwidth=2
+set expandtab
+set smarttab
+
+set tabstop=4
+
+set listchars=tab:→\ ,nbsp:␣,trail:•,extends:⟩,precedes:⟨
+set list
 " Use tmuxline
 let g:airline#extensions#tmuxline#enabled = 1
 " Breezy (theme)
