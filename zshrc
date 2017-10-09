@@ -49,7 +49,7 @@ CASE_SENSITIVE="true"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git rails ruby)
+plugins=(git rails ruby z)
 
 # User configuration
 
@@ -103,3 +103,4 @@ alias nmapme='sudo nmap -T4 -Pn -A -v'
 
 # Find your public ip
 alias publicip='wget http://ipinfo.io/ip -q0 -'
+alias gti='git'

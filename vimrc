@@ -6,13 +6,12 @@ set number
 " Set autoread
 set autoread
 
-" tabs are bad
-set softtabstop=2
-set shiftwidth=2
-set expandtab
+" tabs
 set smarttab
-
+set softtabstop=0
+set noexpandtab
 set tabstop=4
+set shiftwidth=4
 
 set listchars=tab:→\ ,nbsp:␣,trail:•,extends:⟩,precedes:⟨
 set list
