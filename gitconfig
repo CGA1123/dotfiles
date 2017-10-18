@@ -9,7 +9,7 @@
 [color]
 	ui = auto
 [commit]
-	gpgsign = true
+	gpgsign = false
 [core]
 	editor = /usr/bin/env vim
 	excludesfile = ~/.gitignore_global
