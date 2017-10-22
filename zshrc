@@ -82,7 +82,7 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-export PATH="$HOME/bin:$HOME/local/bin:/usr/local/sbin:$PATH:$HOME/.rvm/bin"
+export PATH="$HOME/bin:$HOME/local/bin:/usr/local/sbin:$PATH"
 
 # Tell GPG what to use to prompt password
 export GPG_TTY=$(tty)
@@ -106,8 +106,12 @@ alias publicip='wget http://ipinfo.io/ip -q0 -'
 alias gti='git'
 
 # load local config
-if [ -f "~/.zshrc.local" ]; then
-    source $HOME/.zsh/zshalias
+if [ -f "$HOME/.zshrc.local" ]; then
+    source "$HOME/.zshrc.local"
 else
     echo ".zshrc.local not found."
 fi
+
+# Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
+
