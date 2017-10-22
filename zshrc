@@ -82,9 +82,7 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
-export PATH="/usr/local/sbin:$PATH"
-export PATH="$HOME/local/bin:$PATH:$HOME/bin"
+export PATH="$HOME/bin:$HOME/local/bin:/usr/local/sbin:$PATH:$HOME/.rvm/bin"
 
 # Tell GPG what to use to prompt password
 export GPG_TTY=$(tty)
@@ -95,7 +93,7 @@ export TERM=xterm-256color
 DEFAULT_USER='christiangregg'
 
 # Type `clear` takes too long...
-alias clr='clear'
+alias clr='/usr/bin/clear'
 
 # Cheeky nmap aliases
 alias nscan='nmap -sP'
@@ -103,4 +101,13 @@ alias nmapme='sudo nmap -T4 -Pn -A -v'
 
 # Find your public ip
 alias publicip='wget http://ipinfo.io/ip -q0 -'
+
+# can't spell git
 alias gti='git'
+
+# load local config
+if [ -f "~/.zshrc.local" ]; then
+    source $HOME/.zsh/zshalias
+else
+    echo ".zshrc.local not found."
+fi
