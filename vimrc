@@ -1,14 +1,11 @@
 execute pathogen#infect()
 syntax on
-filetype plugin indent on
 set number
 
 " Set autoread
 set autoread
 
 " tabs
-set smarttab
-set softtabstop=0
 set noexpandtab
 set tabstop=4
 set shiftwidth=4

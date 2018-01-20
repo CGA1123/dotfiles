@@ -107,7 +107,8 @@ alias gti='git'
 
 # load local config
 if [ -f "$HOME/.zshrc.local" ]; then
-    source "$HOME/.zshrc.local"
+	echo "Loading Local Config... [${HOME}/.zshrc.local]"
+	source "$HOME/.zshrc.local"
 else
     echo ".zshrc.local not found."
 fi
