@@ -1,10 +1,7 @@
 #!/usr/bin/env ruby
 
-# Array of files that should not be symlinked
-IGNORE = %w[. .. .git install README.md .gitmodules]
-
 # Get all files in out directory
-FILES = Dir.glob("*", File::FNM_DOTMATCH) - IGNORE
+FILES = %w[gitconfig gitignore_global oh-my-zsh rspec tmux tmux.conf vim vimrc zshrc]
 DOTFILE_PATH = Dir.pwd
 puts ".dotfile is at #{DOTFILE_PATH}..."
 puts "initialising submodules..."
@@ -12,8 +9,9 @@ puts "initialising submodules..."
 
 puts "symlinking dotfiles..."
 FILES.each do |file|
-    puts "Linking: ~/.#{file} -> #{DOTFILE_PATH}/#{file}"
-    `ln -s #{DOTFILE_PATH}/#{file} ~/.#{file}` 
+    puts "Linking: $HOME/.#{file} -> #{DOTFILE_PATH}/#{file}"
+    `ln -ns #{DOTFILE_PATH}/#{file} $HOME/.#{file}`
 end
 
+`mkdir -p $HOME/tmp`
 puts "DONE."
