@@ -116,3 +116,7 @@ fi
 # Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
 
+export SPACESHIP_EXIT_CODE_SHOW=true
+export SPACESHIP_BATTERY_SHOW=always
+export SPACESHIP_TIME_SHOW=true
+export SPACESHIP_PROMPT_ADD_NEWLINE=false
