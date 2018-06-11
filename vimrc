@@ -50,3 +50,4 @@ autocmd BufWinLeave * call clearmatches()
 " Stop netrm from creating annoying file
 let g:netrw_dirhistmax = 0
 
+inoremap § <ESC>
