@@ -17,3 +17,13 @@
 	user = CGA1123
 [ghi]
 	token = !security find-internet-password -a CGA1123 -s github.com -l 'ghi token' -w
+[alias]
+	a = add
+	s = status
+	c = commit -v
+	b = branch
+	co = checkout
+	cb = checkout -b
+	d = diff --color-words -w
+	ds = diff --color-words --staged
+	l = log -p

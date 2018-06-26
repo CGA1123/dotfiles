@@ -1,54 +1,30 @@
 [submodule "oh-my-zsh"]
 	path = oh-my-zsh
 	url = https://github.com/CGA1123/oh-my-zsh.git
-[submodule "vim-airline"]
-	path = vim/bundle/vim-airline
-	url = https://github.com/vim-airline/vim-airline
-[submodule "vim-airline-themes"]
-	path = vim/bundle/vim-airline-themes
-	url = https://github.com/vim-airline/vim-airline-themes
-[submodule "vim-bundler"]
-	path = vim/bundle/vim-bundler
-	url = https://github.com/tpope/vim-bundler
 [submodule "vim-git"]
 	path = vim/bundle/vim-git
 	url = https://github.com/tpope/vim-git
 [submodule "vim-gitgutter"]
 	path = vim/bundle/vim-gitgutter
 	url = https://github.com/airblade/vim-gitgutter
-[submodule "vim-linux-coding-style"]
-	path = vim/bundle/vim-linux-coding-style
-	url = https://github.com/vivien/vim-linux-coding-style
 [submodule "vim-rails"]
 	path = vim/bundle/vim-rails
 	url = https://github.com/tpope/vim-rails
-[submodule "vim-sensible"]
-	path = vim/bundle/vim-sensible
-	url = https://github.com/tpope/vim-sensible
 [submodule "vim/bundle/vim-fugitive"]
 	path = vim/bundle/vim-fugitive
 	url = https://github.com/tpope/vim-fugitive
 [submodule "vim-vinegar"]
 	path = vim/bundle/vim-vinegar
 	url = https://github.com/tpope/vim-vinegar
-[submodule "vim/bundle/breezy"]
-	path = vim/bundle/breezy
-	url = https://github.com/fneu/breezy
 [submodule "tmux/plugins/tpm"]
 	path = tmux/plugins/tpm
 	url = https://github.com/tmux-plugins/tpm
-[submodule "vim/bundle/vim-tmux-focus-events"]
-	path = vim/bundle/vim-tmux-focus-events
-	url = git://github.com/tmux-plugins/vim-tmux-focus-events.git
-[submodule "vim/bundle/tmuxline.vim"]
-	path = vim/bundle/tmuxline.vim
-	url = https://github.com/edkolev/tmuxline.vim
 [submodule "vim/bundle/ctrlp.vim"]
 	path = vim/bundle/ctrlp.vim
 	url = https://github.com/ctrlpvim/ctrlp.vim
-[submodule "vim/bundle/haskell-vim"]
-	path = vim/bundle/haskell-vim
-	url = https://github.com/neovimhaskell/haskell-vim.git
-[submodule "vim/bundle/vim-vinegar"]
-	path = vim/bundle/vim-vinegar
-	url = https://github.com/tpope/vim-vinegar
+[submodule "vim/bundle/vim-polyglot"]
+	path = vim/bundle/vim-polyglot
+	url = https://github.com/sheerun/vim-polyglot
+[submodule "vim/bundle/material.vim"]
+	path = vim/bundle/material.vim
+	url = https://github.com/kaicataldo/material.vim
