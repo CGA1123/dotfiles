@@ -1,5 +1,13 @@
-# Path to your oh-my-zsh installation.
-export ZSH=~/.oh-my-zsh
+source ${HOME}/.dotfiles/antigen.zsh
+
+antigen use oh-my-zsh
+antigen bundle git
+antigen bundle heroku
+antigen bundle ruby
+antigen bundle rails
+antigen bundle zsh-users/zsh-autosuggestions
+antigen theme sunrise
+antigen apply
 
 export PATH="$HOME/bin:$HOME/local/bin:/usr/local/sbin:$PATH"
 

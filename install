@@ -9,9 +9,8 @@ puts "initialising submodules..."
 
 puts "symlinking dotfiles..."
 FILES.each do |file|
-    puts "Linking: $HOME/.#{file} -> #{DOTFILE_PATH}/#{file}"
     `ln -ns #{DOTFILE_PATH}/#{file} $HOME/.#{file}`
 end
 
-`mkdir -p $HOME/tmp`
+`mkdir -p ${HOME}/tmp`
 puts "DONE."
