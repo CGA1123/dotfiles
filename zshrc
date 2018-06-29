@@ -20,8 +20,10 @@ export TERM=xterm-256color
 # Type `clear` takes too long...
 alias clr='/usr/bin/clear'
 alias be='bundle exec'
+alias bi='bundle install'
 alias g='git'
 alias t='tmux'
+alias v='vim'
 
 # load local config
 function load_config () {
