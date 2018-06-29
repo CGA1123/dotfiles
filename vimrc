@@ -22,6 +22,11 @@ set scrolloff=8
 set backspace=indent,eol,start
 set autoindent
 set smarttab
+set expandtab
+set shiftwidth=2
+set tabstop=2
+
+set updatetime=500
 
 " set incremental search (try to find as we type)
 set incsearch
