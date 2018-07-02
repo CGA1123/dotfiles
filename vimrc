@@ -1,5 +1,16 @@
-" load pathogen
-execute pathogen#infect()
+" load plugins with vim-plug
+call plug#begin('~/.vim/plugged')
+Plug 'https://github.com/tpope/vim-git'
+Plug 'https://github.com/airblade/vim-gitgutter'
+Plug 'https://github.com/tpope/vim-rails'
+Plug 'https://github.com/tpope/vim-fugitive'
+Plug 'https://github.com/tpope/vim-vinegar'
+Plug 'https://github.com/ctrlpvim/ctrlp.vim'
+Plug 'https://github.com/sheerun/vim-polyglot'
+Plug 'https://github.com/kaicataldo/material.vim'
+call plug#end()
+
+" Manual Configuration!
 
 " get syntax highlighting
 syntax on
