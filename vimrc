@@ -63,8 +63,11 @@ colorscheme material
 " Set colorcolum
 set colorcolumn=81,101
 
-" Show hidden file in ctrlp
+" ctrlp
 let g:ctrlp_show_hidden = 1
+let g:ctrlp_use_caching = 1
+let g:ctrlp_clear_cache_on_exit = 0
+let g:ctrlp_cache_dir = $HOME . '/tmp'
 
 " Don't clutter working dir with swp files
 set swapfile
