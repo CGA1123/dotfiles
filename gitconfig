@@ -24,7 +24,7 @@
 	b = branch
 	co = checkout
 	cb = checkout -b
-	d = diff --color-words -w
+	d = diff --color-words
 	ds = diff --color-words --staged
 	l = log -p
 	lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit

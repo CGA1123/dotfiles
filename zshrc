@@ -24,6 +24,7 @@ alias bi='bundle install'
 alias g='git'
 alias t='tmux'
 alias v='vim'
+alias r='rails'
 
 # load local config
 function load_config () {
