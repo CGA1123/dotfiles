@@ -26,6 +26,9 @@ alias t='tmux'
 alias v='vim'
 alias r='rails'
 
+# vim bindings on shell!
+bindkey -v
+
 # load local config
 function load_config () {
 	local PATH_TO_CONFIG=${1}
