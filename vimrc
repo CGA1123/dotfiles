@@ -23,6 +23,7 @@ set number
 
 " highlight current line
 set cursorline
+set cursorcolumn
 
 " utf-8 ftw
 set encoding=utf-8
