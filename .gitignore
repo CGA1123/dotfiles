@@ -1,2 +1,4 @@
 tmux/plugins
 vim/plugged
+config/fish/functions
+config/fish/fishd.*
