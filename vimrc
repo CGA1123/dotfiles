@@ -8,6 +8,7 @@ Plug 'https://github.com/tpope/vim-vinegar'
 Plug 'https://github.com/ctrlpvim/ctrlp.vim'
 Plug 'https://github.com/sheerun/vim-polyglot'
 Plug 'https://github.com/kaicataldo/material.vim'
+Plug 'https://github.com/rhysd/vim-crystal'
 call plug#end()
 
 " Manual Configuration!

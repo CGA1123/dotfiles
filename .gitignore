@@ -2,3 +2,5 @@ tmux/plugins
 vim/plugged
 config/fish/functions
 config/fish/fishd.*
+config/fish/completions
+config/fish/conf.d/carwow.fish
