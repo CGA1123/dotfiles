@@ -2,6 +2,7 @@
 call plug#begin('~/.vim/plugged')
 Plug 'https://github.com/tpope/vim-git'
 Plug 'https://github.com/airblade/vim-gitgutter'
+Plug 'https://github.com/vim-ruby/vim-ruby'
 Plug 'https://github.com/tpope/vim-rails'
 Plug 'https://github.com/tpope/vim-fugitive'
 Plug 'https://github.com/tpope/vim-vinegar'
@@ -9,9 +10,14 @@ Plug 'https://github.com/ctrlpvim/ctrlp.vim'
 Plug 'https://github.com/sheerun/vim-polyglot'
 Plug 'https://github.com/kaicataldo/material.vim'
 Plug 'https://github.com/rhysd/vim-crystal'
+Plug 'https://github.com/kana/vim-textobj-user'
+Plug 'https://github.com/nelstrom/vim-textobj-rubyblock'
 call plug#end()
 
 " Manual Configuration!
+
+" enable matchit
+runtime macros/matchit.vim
 
 " get syntax highlighting
 syntax on
@@ -23,8 +29,8 @@ filetype plugin indent on
 set number
 
 " highlight current line
-set cursorline
-set cursorcolumn
+" set cursorline
+" set cursorcolumn
 
 " utf-8 ftw
 set encoding=utf-8
@@ -90,8 +96,9 @@ autocmd BufWinLeave * call clearmatches()
 let g:netrw_dirhistmax = 0
 
 " remap ESC to § (for touchbar mac)
-inoremap § <ESC>
-
+nmap § <ESC>
+imap § <ESC>
+vmap § <ESC>
 " set zsh as shell
 set shell=/bin/zsh
 
