@@ -32,6 +32,9 @@ set number
 " set cursorline
 " set cursorcolumn
 
+" yank into system clipboard
+set clipboard=unnamed
+
 " utf-8 ftw
 set encoding=utf-8
 
