@@ -8,4 +8,5 @@ if status --is-interactive
   abbr v vim
   abbr clr clear
   abbr t tmux
+  abbr local_prune 'git branch >/tmp/merged-branches; vim /tmp/merged-branches; xargs git branch -D </tmp/merged-branches'
 end
