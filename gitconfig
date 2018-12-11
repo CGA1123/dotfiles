@@ -13,6 +13,7 @@
 [core]
 	editor = /usr/bin/env vim
 	excludesfile = ~/.gitignore_global
+	trustctime = false
 [github]
 	user = CGA1123
 [ghi]

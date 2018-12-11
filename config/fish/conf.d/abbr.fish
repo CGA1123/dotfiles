@@ -5,8 +5,11 @@ if status --is-interactive
   abbr b bundle
   abbr be 'bundle exec'
   abbr bi 'bundle install'
+  abbr railsc 'bin/rails c'
+  abbr spec 'bin/rspec'
   abbr v vim
   abbr clr clear
   abbr t tmux
-  abbr local_prune 'git branch >/tmp/merged-branches; vim /tmp/merged-branches; xargs git branch -D </tmp/merged-branches'
+  abbr local_prune 'git branch >/tmp/merged-branches; vim /tmp/merged-branches; xargs git branch -d </tmp/merged-branches'
+  abbr push 'git push -u origin --force-with-lease'
 end
