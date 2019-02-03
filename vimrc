@@ -12,6 +12,7 @@ Plug 'https://github.com/kaicataldo/material.vim'
 Plug 'https://github.com/rhysd/vim-crystal'
 Plug 'https://github.com/kana/vim-textobj-user'
 Plug 'https://github.com/nelstrom/vim-textobj-rubyblock'
+Plug '~/dev/vim-to-github'
 call plug#end()
 
 " Manual Configuration!
@@ -29,8 +30,8 @@ filetype plugin indent on
 set number
 
 " highlight current line
-" set cursorline
-" set cursorcolumn
+"set cursorline
+"set cursorcolumn
 
 " yank into system clipboard
 set clipboard=unnamed
@@ -102,8 +103,10 @@ let g:netrw_dirhistmax = 0
 nmap § <ESC>
 imap § <ESC>
 vmap § <ESC>
-" set zsh as shell
-set shell=/bin/zsh
+
+" ToGithub
+let g:to_github_clip_command = 'pbcopy'
+let g:to_github_clipboard = 1
 
 " Change cursor look in normal/edit modes
 let &t_SI = "\<Esc>]50;CursorShape=1\x7"
