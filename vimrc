@@ -8,10 +8,10 @@ Plug 'https://github.com/tpope/vim-fugitive'
 Plug 'https://github.com/tpope/vim-vinegar'
 Plug 'https://github.com/ctrlpvim/ctrlp.vim'
 Plug 'https://github.com/sheerun/vim-polyglot'
-Plug 'https://github.com/kaicataldo/material.vim'
 Plug 'https://github.com/rhysd/vim-crystal'
 Plug 'https://github.com/kana/vim-textobj-user'
 Plug 'https://github.com/nelstrom/vim-textobj-rubyblock'
+Plug 'https://github.com/joshdick/onedark.vim'
 Plug '~/dev/vim-to-github'
 call plug#end()
 
@@ -70,7 +70,7 @@ set list
 " theme
 set background=dark
 set termguicolors
-colorscheme material
+colorscheme onedark
 
 " Set colorcolum
 set colorcolumn=81,101
