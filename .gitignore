@@ -1,6 +1,9 @@
 tmux/plugins
 vim/plugged
+vim/undodir
+vim/view
 config/fish/functions
 config/fish/fishd.*
 config/fish/completions
+config/fish/fish_variables
 config/fish/conf.d/carwow.fish

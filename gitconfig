@@ -1,33 +1,42 @@
 [filter "lfs"]
-	clean = git-lfs clean %f
-	smudge = git-lfs smudge %f
-	required = true
+  clean = git-lfs clean %f
+  smudge = git-lfs smudge %f
+  required = true
 [user]
-	email = c_arlt@hotmail.com
-	name = Christian Gregg
-	signingkey = 7DBABDF0
+  email = c_arlt@hotmail.com
+  name = Christian Gregg
+  signingkey = 7DBABDF0
 [color]
-	ui = auto
+  ui = auto
 [commit]
-	gpgsign = false
+  gpgsign = false
 [core]
-	editor = /usr/bin/env vim
-	excludesfile = ~/.gitignore_global
-	trustctime = false
+  editor = /usr/bin/env vim
+  excludesfile = ~/.gitignore_global
+  trustctime = false
 [github]
-	user = CGA1123
+  user = CGA1123
 [ghi]
-	token = !security find-internet-password -a CGA1123 -s github.com -l 'ghi token' -w
+  token = !security find-internet-password -a CGA1123 -s github.com -l 'ghi token' -w
 [alias]
-	a = add
-	s = status
-	c = commit -v
-	b = branch
-	co = checkout
-	cb = checkout -b
-	d = diff --color-words
-	ds = diff --color-words --staged
-	l = log -p
-	lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
-	graph = log --decorate --oneline --all --graph
+  a = add
+  s = status
+  c = commit -v
+  b = branch
+  co = checkout
+  cb = checkout -b
+  d = diff --color-words
+  ds = diff --color-words --staged
+  l = log -p
+  lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
+  graph = log --decorate --oneline --all --graph
   pr = open-pull-request
+  g = grep
+  ctags = !.git/hooks/ctags
+[init]
+  templatedir = ~/.git_template
+[push]
+  default = current
+[branch]
+  autosetuprebase = always
+  autosetupmerge = always

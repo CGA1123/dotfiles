@@ -1,3 +1,5 @@
-set PATH "$HOME/.dotfiles/bin" $PATH
+set GOPATH "$HOME/go"
+set PATH "$HOME/.dotfiles/bin" "$GOPATH/bin" $PATH
 set EDITOR "vim"
 
+set -g fish_user_paths "/usr/local/sbin" $fish_user_paths

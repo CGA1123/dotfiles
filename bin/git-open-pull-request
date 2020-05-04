@@ -1,6 +1,9 @@
 #!/usr/bin/env ruby
 
+require 'tempfile'
+
 BRANCH_REGEX = /(?<branch>(?<slug>(?<team_slug>[A-Z]+)(-(?<ticket_number>\d+)?))\/(?<feature_name>.*)|.*)?/
+
 BRANCH = `git rev-parse --abbrev-ref HEAD`
 MATCHES =
   BRANCH
@@ -14,7 +17,7 @@ begin
   slug = MATCHES[:slug] || ''
   ticket_number = MATCHES[:ticket_number] || '1123'
   title = (MATCHES[:feature_name] || 'title').gsub(/[_-]/, ' ').capitalize
-  ticket_link = "https://carwow.kanbanize.com/ctrl_board/8/cards/#{ticket_number}/details"
+  ticket_link = "https://carwow.kanbanize.com/ctrl_board/42/cards/#{ticket_number}/details"
 
   template = <<~COMMIT_MSG
     [#{slug}] #{title}
@@ -25,7 +28,7 @@ begin
   file.write(template)
   file.flush
 
-  system("hub pull-request --edit --copy --browse --assign=CGA1123 --file=#{file.path}")
+  system("cd #{Dir.pwd}; hub pull-request --edit --copy --browse --assign=CGA1123 --file=#{file.path}")
 ensure
   file.close!
 end

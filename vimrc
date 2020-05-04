@@ -12,11 +12,13 @@ Plug 'https://github.com/rhysd/vim-crystal'
 Plug 'https://github.com/kana/vim-textobj-user'
 Plug 'https://github.com/nelstrom/vim-textobj-rubyblock'
 Plug 'https://github.com/joshdick/onedark.vim'
+Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 Plug '~/dev/vim-to-github'
-Plug 'neoclide/coc.nvim', {'do': { -> coc#util#install()}}
 call plug#end()
 
-" Manual Configuration!
+"" infinite, persisted undo
+set undofile
+set undodir=~/.vim/undodir
 
 " enable matchit
 runtime macros/matchit.vim
@@ -29,10 +31,11 @@ filetype plugin indent on
 
 " show line numbers
 set number
+set relativenumber
 
 " highlight current line
-"set cursorline
-"set cursorcolumn
+set cursorline
+set cursorcolumn
 
 " yank into system clipboard
 set clipboard=unnamed
@@ -50,7 +53,7 @@ set expandtab
 set shiftwidth=2
 set tabstop=2
 
-set updatetime=500
+set updatetime=5000
 
 " set incremental search (try to find as we type)
 set incsearch
@@ -131,23 +134,3 @@ set shortmess+=c
 
 " always show signcolumns
 set signcolumn=yes
-
-" Use tab for trigger completion with characters ahead and navigate.
-" Use command ':verbose imap <tab>' to make sure tab is not mapped by other plugin.
-inoremap <silent><expr> <TAB>
-      \ pumvisible() ? "\<C-n>" :
-      \ <SID>check_back_space() ? "\<TAB>" :
-      \ coc#refresh()
-inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
-
-function! s:check_back_space() abort
-  let col = col('.') - 1
-  return !col || getline('.')[col - 1]  =~# '\s'
-endfunction
-
-" Use <c-space> to trigger completion.
-inoremap <silent><expr> <c-space> coc#refresh()
-
-" Use <cr> to confirm completion, `<C-g>u` means break undo chain at current position.
-" Coc only does snippet and additional edit on confirm.
-inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
