@@ -14,5 +14,6 @@ if status --is-interactive
   abbr local_prune 'git branch >/tmp/merged-branches; vim /tmp/merged-branches; xargs git branch -d </tmp/merged-branches'
   abbr push 'git push -u origin --force-with-lease'
   abbr gg 'git grep'
-  abbr carwow 'wow carwow'
+  abbr gwatch "fswatch -o . -l 1 | xargs -IX sh -c 'clear; go test ./...'"
 end
+

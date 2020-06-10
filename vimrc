@@ -14,6 +14,9 @@ Plug 'https://github.com/nelstrom/vim-textobj-rubyblock'
 Plug 'https://github.com/joshdick/onedark.vim'
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 Plug '~/dev/vim-to-github'
+Plug 'dart-lang/dart-vim-plugin'
+Plug 'thosakwe/vim-flutter'
+Plug 'https://github.com/majutsushi/tagbar'
 call plug#end()
 
 "" infinite, persisted undo
@@ -134,3 +137,14 @@ set shortmess+=c
 
 " always show signcolumns
 set signcolumn=yes
+
+" DartFmt
+let g:dart_format_on_save = 1
+
+" TagBar
+nmap  :TagbarToggle<CR>
+let g:tagbar_compact = 1
+let g:tagbar_width=60
+let g:tagbar_show_visibility=1
+
+autocmd FileType * nested :call tagbar#autoopen(0)
