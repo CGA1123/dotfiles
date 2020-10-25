@@ -17,6 +17,7 @@ Plug '~/dev/vim-to-github'
 Plug 'dart-lang/dart-vim-plugin'
 Plug 'thosakwe/vim-flutter'
 Plug 'https://github.com/majutsushi/tagbar'
+Plug 'https://github.com/tpope/vim-rhubarb'
 call plug#end()
 
 "" infinite, persisted undo
@@ -54,7 +55,7 @@ set autoindent
 set smarttab
 set expandtab
 set shiftwidth=2
-set tabstop=2
+set tabstop=4
 
 set updatetime=5000
 
@@ -147,4 +148,26 @@ let g:tagbar_compact = 1
 let g:tagbar_width=60
 let g:tagbar_show_visibility=1
 
-autocmd FileType * nested :call tagbar#autoopen(0)
+" vim-go
+let g:go_highlight_types = 1
+let g:go_highlight_fields = 1
+let g:go_highlight_functions = 1
+let g:go_highlight_function_calls = 1
+let g:go_highlight_operators = 1
+let g:go_highlight_extra_types = 1
+let g:go_highlight_build_constraints = 1
+let g:go_auto_type_info = 1
+let g:go_fmt_command = "goimports"
+
+autocmd Filetype go command! -bang A call go#alternate#Switch(<bang>0, 'edit')
+
+function! InsertTabWrapper()
+    let col = col('.') - 1
+    if !col || getline('.')[col - 1] !~ '\k'
+        return "\<tab>"
+    else
+        return "\<c-p>"
+    endif
+endfunction
+inoremap <expr> <tab> InsertTabWrapper()
+inoremap <s-tab> <c-n>

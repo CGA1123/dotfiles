@@ -1,9 +1,5 @@
-[filter "lfs"]
-  clean = git-lfs clean %f
-  smudge = git-lfs smudge %f
-  required = true
 [user]
-  email = c_arlt@hotmail.com
+  email = christian@bissy.io
   name = Christian Gregg
   signingkey = 7DBABDF0
 [color]
@@ -16,12 +12,10 @@
   trustctime = false
 [github]
   user = CGA1123
-[ghi]
-  token = !security find-internet-password -a CGA1123 -s github.com -l 'ghi token' -w
 [alias]
   a = add
   s = status
-  c = commit -v
+  c = commit -sv
   b = branch
   co = checkout
   cb = checkout -b
