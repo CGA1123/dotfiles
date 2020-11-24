@@ -1,23 +1,20 @@
 " load plugins with vim-plug
 call plug#begin('~/.vim/plugged')
-Plug 'https://github.com/tpope/vim-git'
-Plug 'https://github.com/airblade/vim-gitgutter'
-Plug 'https://github.com/vim-ruby/vim-ruby'
-Plug 'https://github.com/tpope/vim-rails'
-Plug 'https://github.com/tpope/vim-fugitive'
-Plug 'https://github.com/tpope/vim-vinegar'
-Plug 'https://github.com/ctrlpvim/ctrlp.vim'
-Plug 'https://github.com/sheerun/vim-polyglot'
-Plug 'https://github.com/rhysd/vim-crystal'
-Plug 'https://github.com/kana/vim-textobj-user'
-Plug 'https://github.com/nelstrom/vim-textobj-rubyblock'
-Plug 'https://github.com/joshdick/onedark.vim'
+Plug 'tpope/vim-git'
+Plug 'airblade/vim-gitgutter'
+Plug 'vim-ruby/vim-ruby'
+Plug 'tpope/vim-rails'
+Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-vinegar'
+Plug 'sheerun/vim-polyglot'
+Plug 'kana/vim-textobj-user'
+Plug 'nelstrom/vim-textobj-rubyblock'
+Plug 'joshdick/onedark.vim'
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
-Plug '~/dev/vim-to-github'
-Plug 'dart-lang/dart-vim-plugin'
-Plug 'thosakwe/vim-flutter'
-Plug 'https://github.com/majutsushi/tagbar'
-Plug 'https://github.com/tpope/vim-rhubarb'
+Plug 'majutsushi/tagbar'
+Plug 'tpope/vim-rhubarb'
+Plug 'elmcast/elm-vim'
+Plug 'tomtom/tcomment_vim'
 call plug#end()
 
 "" infinite, persisted undo
@@ -57,8 +54,6 @@ set expandtab
 set shiftwidth=2
 set tabstop=4
 
-set updatetime=5000
-
 " set incremental search (try to find as we type)
 set incsearch
 
@@ -71,10 +66,6 @@ set wildmenu
 " Set autoread
 set autoread
 
-" Show whitespace characters
-set listchars=tab:→\ ,nbsp:␣,trail:•,extends:⟩,precedes:⟨
-set list
-
 " theme
 set background=dark
 set termguicolors
@@ -83,18 +74,16 @@ colorscheme onedark
 " Set colorcolum
 set colorcolumn=81,101
 
-" ctrlp
-let g:ctrlp_show_hidden = 1
-let g:ctrlp_use_caching = 1
-let g:ctrlp_clear_cache_on_exit = 0
-let g:ctrlp_cache_dir = $HOME . '/tmp'
-
 " Don't clutter working dir with swp files
 set swapfile
 set dir=~/tmp
 
 " Fix blotchy background when using vim within tmux
 set t_ut=
+
+" Show whitespace characters
+set listchars=tab:→\ ,nbsp:␣,trail:•,extends:⟩,precedes:⟨
+set list
 
 " Show unwanted whitespace
 highlight ExtraWhitespace ctermbg=red guibg=red
@@ -104,7 +93,7 @@ autocmd InsertEnter * match ExtraWhitespace /\s\+\%#\@<!$/
 autocmd InsertLeave * match ExtraWhitespace /\s\+$/
 autocmd BufWinLeave * call clearmatches()
 
-" Stop netrm from creating annoying file
+" Stop netrw from creating annoying file
 let g:netrw_dirhistmax = 0
 
 " remap ESC to § (for touchbar mac)
@@ -112,38 +101,20 @@ nmap § <ESC>
 imap § <ESC>
 vmap § <ESC>
 
-" ToGithub
-let g:to_github_clip_command = 'pbcopy'
-let g:to_github_clipboard = 1
-
 " Change cursor look in normal/edit modes
 let &t_SI = "\<Esc>]50;CursorShape=1\x7"
 let &t_EI = "\<Esc>]50;CursorShape=0\x7"
 
-" if hidden is not set, TextEdit might fail.
 set hidden
-
-" Some servers have issues with backup files, see #649
 set nobackup
 set nowritebackup
-
-" Better display for messages
 set cmdheight=2
-
-" Smaller updatetime for CursorHold & CursorHoldI
 set updatetime=300
-
-" don't give |ins-completion-menu| messages.
 set shortmess+=c
-
-" always show signcolumns
 set signcolumn=yes
 
-" DartFmt
-let g:dart_format_on_save = 1
-
 " TagBar
-nmap  :TagbarToggle<CR>
+nmap <c-H> :TagbarToggle<CR>
 let g:tagbar_compact = 1
 let g:tagbar_width=60
 let g:tagbar_show_visibility=1
@@ -158,6 +129,10 @@ let g:go_highlight_extra_types = 1
 let g:go_highlight_build_constraints = 1
 let g:go_auto_type_info = 1
 let g:go_fmt_command = "goimports"
+
+" elm
+let g:elm_setup_keybindings = 0
+let g:elm_format_autosave = 1
 
 autocmd Filetype go command! -bang A call go#alternate#Switch(<bang>0, 'edit')
 

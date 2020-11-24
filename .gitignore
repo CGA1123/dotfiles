@@ -7,3 +7,4 @@ config/fish/fishd.*
 config/fish/completions
 config/fish/fish_variables
 config/fish/conf.d/carwow.fish
+config/fish/conf.d/secret.fish
