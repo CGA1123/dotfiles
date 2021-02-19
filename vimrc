@@ -15,6 +15,7 @@ Plug 'majutsushi/tagbar'
 Plug 'tpope/vim-rhubarb'
 Plug 'elmcast/elm-vim'
 Plug 'tomtom/tcomment_vim'
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
 call plug#end()
 
 "" infinite, persisted undo
@@ -112,6 +113,7 @@ set cmdheight=2
 set updatetime=300
 set shortmess+=c
 set signcolumn=yes
+set showcmd
 
 " TagBar
 nmap <c-H> :TagbarToggle<CR>
@@ -136,13 +138,21 @@ let g:elm_format_autosave = 1
 
 autocmd Filetype go command! -bang A call go#alternate#Switch(<bang>0, 'edit')
 
-function! InsertTabWrapper()
-    let col = col('.') - 1
-    if !col || getline('.')[col - 1] !~ '\k'
-        return "\<tab>"
-    else
-        return "\<c-p>"
-    endif
+" coc.nvim
+let g:coc_global_extensions = ['coc-solargraph']
+
+" <C-space> for completion
+inoremap <silent><expr> <c-@> coc#refresh()
+
+function! s:check_back_space() abort
+  let col = col('.') - 1
+  return !col || getline('.')[col - 1]  =~# '\s'
 endfunction
-inoremap <expr> <tab> InsertTabWrapper()
-inoremap <s-tab> <c-n>
+
+" tab completion
+inoremap <silent><expr> <TAB>
+      \ pumvisible() ? "\<C-n>" :
+      \ <SID>check_back_space() ? "\<TAB>" :
+      \ coc#refresh()
+inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
+inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
