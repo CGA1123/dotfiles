@@ -15,5 +15,6 @@ if status --is-interactive
   abbr push 'git push -u origin --force-with-lease'
   abbr gg 'git grep'
   abbr gwatch "fswatch -o . -l 1 | xargs -IX sh -c 'clear; go test ./...'"
+  abbr tm tomato
 end
 
