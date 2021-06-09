@@ -37,3 +37,5 @@
   autosetupmerge = always
 [pull]
 	ff = only
+[credential]
+	helper = osxkeychain

@@ -16,6 +16,8 @@ Plug 'tpope/vim-rhubarb'
 Plug 'elmcast/elm-vim'
 Plug 'tomtom/tcomment_vim'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf.vim'
 call plug#end()
 
 "" infinite, persisted undo
@@ -160,3 +162,5 @@ inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
 " always show statusline
 set laststatus=2
 
+nnoremap <C-p> :Files<Cr>
+nnoremap <C-s> :Ag<Cr>

@@ -1,7 +1,7 @@
 #!/usr/bin/env ruby
 
 # Get all files in out directory
-FILES = %w[gitconfig gitignore_global rspec tmux tmux.conf vim vimrc config/fish]
+FILES = %w[gitconfig gitignore_global git_template rspec tmux tmux.conf vim vimrc config/fish]
 DOTFILE_PATH = Dir.pwd
 puts ".dotfile is at #{DOTFILE_PATH}..."
 puts "initialising submodules..."
