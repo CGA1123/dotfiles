@@ -41,8 +41,5 @@ asdf global ruby "${RUBY_VERSION}"
 asdf install nodejs "${NODE_VERSION}"
 asdf global nodejs "${NODE_VERSION}"
 
-curl -fsSL "https://raw.githubusercontent.com/git/git/HEAD/contrib/completion/git-prompt.sh" \
-  -o "${HOME}/.git-prompt.sh"
-
 # setup vim
 vim +PlugInstall +qall

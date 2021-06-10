@@ -14,33 +14,32 @@ COLOUR_LIGHT_BLUE="94"
 COLOUR_LIGHT_MAGENTA="95"
 COLOUR_LIGHT_CYAN="96"
 COLOUR_WHITE="97"
+COLOUR_RESET="0"
 
 function colour() {
-  printf "\e[${1}m"
+  printf "\[\e[${1}m\]"
 }
 
 function colour_background() {
-  local bg="$((${1} + 10))"
-
-  colour ${bg}
-}
-
-function colour_reset() {
-  printf "\e[0m"
+  if [[ "${1}" -eq "${COLOUR_RESET}" ]]; then
+    colour ${1}
+  else
+    colour "$((${1} + 10))"
+  fi
 }
 
 function colour_bold() {
-  printf "\e[1m"
+  colour 1
 }
 
 function colour_faint() {
-  printf "\e[2m"
+  colour 2
 }
 
 function colour_italic() {
-  printf "\e[3m"
+  colour 3
 }
 
 function colour_underline() {
-  printf "\e[4m"
+  colour 4
 }
