@@ -7,3 +7,6 @@ function prompter() {
 }
 
 PROMPT_COMMAND=prompter
+
+# tell macOS to stop telling me about zsh
+export BASH_SILENCE_DEPRECATION_WARNING=1
