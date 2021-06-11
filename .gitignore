@@ -2,9 +2,3 @@ tmux/.tmux/plugins
 vim/.vim/plugged
 vim/.vim/.undodir
 vim/.vim/view
-fish/functions
-fish/fishd.*
-fish/completions
-fish/fish_variables
-fish/conf.d/carwow.fish
-fish/conf.d/secret.fish
