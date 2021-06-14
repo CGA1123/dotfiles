@@ -3,7 +3,7 @@
 set -euo pipefail
 
 # install homebrew, if it isn't already
-which -s brew || $(curl -fsSL "https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh")
+which -s brew || /bin/bash -c "$(curl -fsSL "https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh")"
 
 # install Brewfile
 brew bundle
@@ -27,7 +27,7 @@ NODE_VERSION="14.17.0"
 function asdf_plugin_install () {
   local plugin=${1}
 
-  if ! $(asdf plugin list all | grep -q "${plugin}"); then
+  if ! $(asdf plugin list | grep -q "${plugin}"); then
     asdf plugin add "${plugin}"
   fi
 }
