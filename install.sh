@@ -21,7 +21,7 @@ stow rspec --target "${HOME}"
 stow tmux --target "${HOME}"
 stow vim --target "${HOME}"
 
-RUBY_VERSION="2.7.1"
+RUBY_VERSION="2.7.2"
 NODE_VERSION="14.17.0"
 
 function asdf_plugin_install () {
