@@ -2,10 +2,10 @@
 ARCH=$(uname -p)
 case "${ARCH}" in
   arm)
-    eval "$(/opt/homebrew/bin/brew shellenv)"
+    eval "$(/opt/Homebrew/bin/brew shellenv)"
     ;;
   i386)
-    eval "$(/usr/local/homebrew/bin/brew shellenv)"
+    eval "$(/usr/local/Homebrew/bin/brew shellenv)"
     ;;
   *)
     echo "Unknown architecture ${ARCH} - failed to load homebrew shellenv"
