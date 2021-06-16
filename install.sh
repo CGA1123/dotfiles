@@ -6,7 +6,7 @@ set -euo pipefail
 which -s brew || /bin/bash -c "$(curl -fsSL "https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh")"
 
 # install Brewfile
-brew bundle
+brew bundle --verbose
 
 # initialize submodules
 git submodule update --init --recursive
