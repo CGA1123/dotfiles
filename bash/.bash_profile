@@ -1,11 +1,17 @@
 # Homebrew installs to different places on Apple M1 vs Intel
+KERNEL=$(uname -s)
 ARCH=$(uname -p)
-case "${ARCH}" in
-  arm)
+
+case "${KERNEL}-${ARCH}" in
+  Darwin-arm)
     eval "$(/opt/Homebrew/bin/brew shellenv)"
     ;;
-  i386)
+  Darwin-i386)
     eval "$(/usr/local/Homebrew/bin/brew shellenv)"
+    ;;
+  Linux-*)
+    test -d ~/.linuxbrew && eval "$(~/.linuxbrew/bin/brew shellenv)"
+    test -d /home/linuxbrew/.linuxbrew && eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
     ;;
   *)
     echo "Unknown architecture ${ARCH} - failed to load homebrew shellenv"
