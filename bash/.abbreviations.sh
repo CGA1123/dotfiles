@@ -13,6 +13,7 @@ alias push="git push --force-with-lease"
 
 # other
 alias b="bundle"
+alias be="bundle exec"
 alias v="vim"
 alias vi="vim"
 alias clr="clear"
