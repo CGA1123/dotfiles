@@ -5,6 +5,23 @@ set -euo pipefail
 RUBY_VERSION="2.7.2"
 NODE_VERSION="14.17.0"
 
+# is_dev_environment checks whether the current box is a throwaway dev
+# environment, such as a codespace.
+function is_dev_environment() {
+  ([[ "$(logname)" == "build" ]] || [[ ! -z ${CODESPACES} ]]) && [[ -z "${DOTFILES_FULL_INSTALL}" ]]
+}
+
+# fstow will forcible run stow, moving any conflicting files/folders by
+# renaming them with a `.bkup` suffix
+#
+# TODO - it doesn't do that yet :)
+function fstow() {
+  local SRC="${1}"
+  local DST="${2}"
+
+  stow ${SRC} --target ${DST}
+}
+
 function brew_installed() {
   local KERNEL=$(uname -s)
   local ARCH=$(uname -p)
@@ -72,8 +89,8 @@ asdf global nodejs "${NODE_VERSION}"
 vim +PlugInstall +qall
 
 # setup dotfiles
-stow bash --target "${HOME}"
-stow git --target "${HOME}"
-stow rspec --target "${HOME}"
-stow tmux --target "${HOME}"
-stow vim --target "${HOME}"
+fstow bash "${HOME}"
+fstow git "${HOME}"
+fstow rspec "${HOME}"
+fstow tmux "${HOME}"
+fstow vim "${HOME}"
