@@ -4,7 +4,7 @@ ARCH=$(uname -p)
 
 case "${KERNEL}-${ARCH}" in
   Darwin-arm)
-    eval "$(/opt/Homebrew/bin/brew shellenv)"
+    eval "$(/opt/homebrew/bin/brew shellenv)"
     ;;
   Darwin-i386)
     eval "$(/usr/local/Homebrew/bin/brew shellenv)"

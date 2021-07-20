@@ -28,7 +28,7 @@ function brew_installed() {
 
   case "${KERNEL}-${ARCH}" in
     Darwin-arm)
-      test -d /opt/Homebrew
+      test -d /opt/homebrew
       ;;
     Darwin-i386)
       test -d /usr/local/Homebrew
@@ -45,7 +45,7 @@ function brew_dir() {
 
   case "${KERNEL}-${ARCH}" in
     Darwin-arm)
-      echo "/opt/Homebrew"
+      echo "/opt/homebrew"
       ;;
     Darwin-i386)
       echo "/usr/local/Homebrew"
