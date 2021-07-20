@@ -161,5 +161,8 @@ inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
 " always show statusline
 set laststatus=2
 
+" C-p for fuzzy file finding
 nnoremap <C-p> :Files<Cr>
+
+" C-s for search
 nnoremap <C-s> :Ag<Cr>
