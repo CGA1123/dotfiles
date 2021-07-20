@@ -76,14 +76,18 @@ git submodule update --init --recursive
 # make sure some dirs exist
 mkdir -p ${HOME}/tmp
 
-asdf_plugin_install "ruby"
-asdf_plugin_install "nodejs"
+if [[ ! is_dev_environment ]]; then
+  asdf_plugin_install "ruby"
+  asdf_plugin_install "nodejs"
 
-asdf install ruby "${RUBY_VERSION}"
-asdf global ruby "${RUBY_VERSION}"
+  asdf install ruby "${RUBY_VERSION}"
+  asdf global ruby "${RUBY_VERSION}"
 
-asdf install nodejs "${NODE_VERSION}"
-asdf global nodejs "${NODE_VERSION}"
+  asdf install nodejs "${NODE_VERSION}"
+  asdf global nodejs "${NODE_VERSION}"
+else
+  echo "Skipping asdf installs..."
+fi
 
 # setup vim
 vim +PlugInstall +qall
