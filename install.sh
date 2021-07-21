@@ -12,12 +12,21 @@ function is_dev_environment() {
 }
 
 # fstow will forcible run stow, moving any conflicting files/folders by
-# renaming them with a `.bkup` suffix
+# renaming them with a `.bak` suffix
 #
-# TODO - it doesn't do that yet :)
 function fstow() {
   local SRC="${1}"
   local DST="${2}"
+
+  POTENTIAL_FILES=$(ls -1a ${SRC} | grep -v "^\.\.\?$")
+  for POTENTIAL_FILE in ${POTENTIAL_FILES}; do
+    local POTENTIAL_PATH="${DST}/${POTENTIAL_FILE}"
+
+    if [[ -d "${POTENTIAL_PATH}" ]] || [[ -f "${POTENTIAL_PATH}" ]]; then
+      echo "moving ${POTENTIAL_PATH}"
+      mv "${POTENTIAL_PATH}" "${POTENTIAL_PATH}.bak"
+    fi
+  done
 
   stow ${SRC} --target ${DST}
 }
