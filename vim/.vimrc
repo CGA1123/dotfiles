@@ -20,6 +20,9 @@ Plug 'junegunn/fzf.vim'
 call plug#end()
 
 "" infinite, persisted undo
+if !isdirectory($HOME."/.vim/undodir")
+  call mkdir($HOME."/.vim/undodir", "p", 0700)
+endif
 set undofile
 set undodir=~/.vim/undodir
 

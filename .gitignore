@@ -1,5 +1,5 @@
 tmux/.tmux/plugins
 vim/.vim/plugged
-vim/.vim/.undodir
+vim/.vim/undodir
 vim/.vim/view
 Brewfile.lock.json
