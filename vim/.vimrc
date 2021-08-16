@@ -10,6 +10,7 @@ Plug 'sheerun/vim-polyglot'
 Plug 'kana/vim-textobj-user'
 Plug 'nelstrom/vim-textobj-rubyblock'
 Plug 'joshdick/onedark.vim'
+Plug 'rakr/vim-one'
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 Plug 'majutsushi/tagbar'
 Plug 'tpope/vim-rhubarb'
@@ -74,7 +75,7 @@ set autoread
 " theme
 set background=dark
 set termguicolors
-colorscheme onedark
+colorscheme one
 
 " Set colorcolum
 set colorcolumn=81,101
