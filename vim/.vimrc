@@ -145,6 +145,7 @@ autocmd Filetype go command! -bang A call go#alternate#Switch(<bang>0, 'edit')
 
 " coc.nvim
 let g:coc_global_extensions = ['coc-solargraph']
+let g:coc_disable_startup_warning = 1
 
 " <C-space> for completion
 inoremap <silent><expr> <c-@> coc#refresh()
