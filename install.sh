@@ -73,12 +73,6 @@ function asdf_plugin_install () {
   fi
 }
 
-# install homebrew, if it isn't already
-brew_installed > /dev/null 2>&1 || /bin/bash -c "$(curl -fsSL "https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh")"
-
-# install Brewfile
-eval "$(brew_dir)/bin/brew bundle --verbose"
-
 # initialize submodules
 git submodule update --init --recursive
 
@@ -86,6 +80,12 @@ git submodule update --init --recursive
 mkdir -p ${HOME}/tmp
 
 if [[ ! is_dev_environment ]]; then
+  # install homebrew, if it isn't already
+  brew_installed > /dev/null 2>&1 || /bin/bash -c "$(curl -fsSL "https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh")"
+
+  # install Brewfile
+  eval "$(brew_dir)/bin/brew bundle --verbose"
+
   asdf_plugin_install "ruby"
   asdf_plugin_install "nodejs"
 
@@ -95,7 +95,15 @@ if [[ ! is_dev_environment ]]; then
   asdf install nodejs "${NODE_VERSION}"
   asdf global nodejs "${NODE_VERSION}"
 else
-  echo "Skipping asdf installs..."
+  sudo apt-get update
+  sudo apt-get install -y \
+    vim \
+    silversearcher-ag \
+    stow \
+    ripgrep \
+    exuberant-ctags
+
+  curl -sL install-node.now.sh/lts | bash
 fi
 
 # setup vim
