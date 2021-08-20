@@ -103,7 +103,7 @@ else
     ripgrep \
     exuberant-ctags
 
-  sudo /bin/bash -c 'curl -sfLS install-node.vercel.app/lts | bash'
+  sudo /bin/bash -c 'curl -sfLS install-node.vercel.app/lts | bash -s -- --yes'
 fi
 
 # setup vim
@@ -115,3 +115,8 @@ fstow git "${HOME}"
 fstow rspec "${HOME}"
 fstow tmux "${HOME}"
 fstow vim "${HOME}"
+
+if [[ ! -s ${CODESPACES} ]]; then
+  git config --global --unset url.ssh://git@github.com/.insteadof
+  git config --global url.https:/github.com/.insteadof=ssh://git@github.com/
+fi
