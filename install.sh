@@ -106,15 +106,15 @@ else
   sudo /bin/bash -c 'curl -sfLS install-node.vercel.app/lts | bash -s -- --yes'
 fi
 
-# setup vim
-vim +PlugInstall +qall
-
 # setup dotfiles
 fstow bash "${HOME}"
 fstow git "${HOME}"
 fstow rspec "${HOME}"
 fstow tmux "${HOME}"
 fstow vim "${HOME}"
+
+# setup vim
+vim +PlugInstall +qall
 
 if [[ ! -s ${CODESPACES} ]]; then
   git config --global --unset url.ssh://git@github.com/.insteadof
