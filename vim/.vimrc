@@ -75,7 +75,7 @@ set autoread
 " theme
 set background=dark
 set termguicolors
-colorscheme one
+silent! colorscheme one
 
 " Set colorcolum
 set colorcolumn=81,101
