@@ -103,7 +103,7 @@ else
     ripgrep \
     exuberant-ctags
 
-  curl -sL install-node.now.sh/lts | bash
+  sudo /bin/bash -c 'curl -sfLS install-node.vercel.app/lts | bash'
 fi
 
 # setup vim
