@@ -115,7 +115,7 @@ fstow vim "${HOME}"
 
 if [[ ! -s ${CODESPACES} ]]; then
   git config --global --unset url.ssh://git@github.com/.insteadof
-  git config --global url.https:/github.com/.insteadof=ssh://git@github.com/
+  git config --global url.https://github.com/.insteadof=ssh://git@github.com/
 fi
 
 # setup vim
