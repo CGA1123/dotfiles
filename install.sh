@@ -4,6 +4,7 @@ set -euo pipefail
 
 RUBY_VERSION="2.7.2"
 NODE_VERSION="14.17.0"
+CODESPACES=${CODESPACES:-""}
 
 # is_dev_environment checks whether the current box is a throwaway dev
 # environment, such as a codespace.
@@ -113,7 +114,7 @@ fstow rspec "${HOME}"
 fstow tmux "${HOME}"
 fstow vim "${HOME}"
 
-if [[ ! -s ${CODESPACES} ]]; then
+if [[ ! -z ${CODESPACES} ]]; then
   git config --global --unset url.ssh://git@github.com/.insteadof
   git config --global url.https://github.com/.insteadof=ssh://git@github.com/
 fi
