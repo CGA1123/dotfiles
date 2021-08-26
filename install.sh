@@ -119,5 +119,8 @@ if [[ ! -z ${CODESPACES} ]]; then
   git config --global url.https://github.com/.insteadof ssh://git@github.com/
 fi
 
-# setup vim
-vim +PlugInstall +qall
+
+if [[ ! is_dev_environment ]]; then
+  # setup vim
+  vim +PlugInstall +qall
+fi
