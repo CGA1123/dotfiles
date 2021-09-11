@@ -17,3 +17,9 @@ alias be="bundle exec"
 alias v="vim"
 alias vi="vim"
 alias clr="clear"
+
+function gc() {
+  local nwo=${1}
+
+  git clone git@github.com:${nwo}
+}
