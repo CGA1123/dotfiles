@@ -25,3 +25,9 @@ function gc() {
   mkdir -p "${dst}"
   git clone "git@github.com:${nwo}" "${dst}"
 }
+
+function bb() {
+  local q=${1}
+
+  open "https://blackbird.githubapp.com?q=${q}"
+}
