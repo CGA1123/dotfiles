@@ -136,10 +136,6 @@ let g:go_highlight_build_constraints = 1
 let g:go_auto_type_info = 1
 let g:go_fmt_command = "goimports"
 
-" elm
-let g:elm_setup_keybindings = 0
-let g:elm_format_autosave = 1
-
 autocmd Filetype go command! -bang A call go#alternate#Switch(<bang>0, 'edit')
 
 " coc.nvim
