@@ -19,7 +19,9 @@ alias vi="vim"
 alias clr="clear"
 
 function gc() {
-  local nwo=${1}
+  local nwo="${1}"
+  local dst="${HOME}/${nwo}"
 
-  git clone git@github.com:${nwo}
+  mkdir -p "${dst}"
+  git clone "git@github.com:${nwo}" "${dst}"
 }
