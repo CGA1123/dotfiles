@@ -8,3 +8,6 @@ brew "vim"
 brew "tmux"
 brew "git"
 brew "bash-completion"
+
+tap "cantino/mcfly"
+brew "mcfly"

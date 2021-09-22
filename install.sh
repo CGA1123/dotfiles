@@ -104,7 +104,8 @@ else
     ripgrep \
     exuberant-ctags
 
-  sudo /bin/bash -c 'curl -sfLS install-node.vercel.app/lts | bash -s -- --yes'
+  /bin/bash -c 'curl -sfLS install-node.vercel.app/lts | bash -s -- --yes'
+  /bin/bash -c 'curl -LSfs https://raw.githubusercontent.com/cantino/mcfly/master/ci/install.sh | sh -s -- --git cantino/mcfly'
 fi
 
 # setup dotfiles
