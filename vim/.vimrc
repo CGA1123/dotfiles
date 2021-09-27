@@ -1,22 +1,24 @@
 " load plugins with vim-plug
 call plug#begin('~/.vim/plugged')
-Plug 'tpope/vim-git'
 Plug 'airblade/vim-gitgutter'
-Plug 'vim-ruby/vim-ruby'
-Plug 'tpope/vim-rails'
-Plug 'tpope/vim-fugitive'
-Plug 'tpope/vim-vinegar'
-Plug 'sheerun/vim-polyglot'
-Plug 'kana/vim-textobj-user'
-Plug 'nelstrom/vim-textobj-rubyblock'
-Plug 'rakr/vim-one'
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
-Plug 'majutsushi/tagbar'
-Plug 'tpope/vim-rhubarb'
-Plug 'tomtom/tcomment_vim'
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
+Plug 'kana/vim-textobj-user'
+Plug 'majutsushi/tagbar'
+Plug 'nelstrom/vim-textobj-rubyblock'
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'rakr/vim-one'
+Plug 'sheerun/vim-polyglot'
+Plug 'tomtom/tcomment_vim'
+Plug 'tpope/vim-dispatch'
+Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-git'
+Plug 'tpope/vim-rails'
+Plug 'tpope/vim-rhubarb'
+Plug 'tpope/vim-vinegar'
+Plug 'vim-ruby/vim-ruby'
+Plug 'vim-test/vim-test'
 call plug#end()
 
 "" infinite, persisted undo
@@ -166,3 +168,16 @@ nnoremap <C-p> :Files<Cr>
 
 " C-s for search
 nnoremap <C-s> :Ag<Cr>
+
+" load .bashrc in terminal ! commands.
+" set shellcmdflag=-ic
+
+" these "Ctrl mappings" work well when Caps Lock is mapped to Ctrl
+nmap <silent> t<C-n> :TestNearest<CR>
+nmap <silent> t<C-f> :TestFile<CR>
+nmap <silent> t<C-s> :TestSuite<CR>
+nmap <silent> t<C-l> :TestLast<CR>
+nmap <silent> t<C-g> :TestVisit<CR>
+
+" make test commands execute using dispatch.vim
+let test#strategy = "dispatch"
