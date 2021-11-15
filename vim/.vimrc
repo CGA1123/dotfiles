@@ -17,8 +17,17 @@ Plug 'tpope/vim-git'
 Plug 'tpope/vim-rails'
 Plug 'tpope/vim-rhubarb'
 Plug 'tpope/vim-vinegar'
+Plug 'tpope/vim-surround'
 Plug 'vim-ruby/vim-ruby'
 Plug 'vim-test/vim-test'
+
+if has('nvim')
+  Plug 'pwntester/octo.nvim'
+  Plug 'nvim-lua/plenary.nvim'
+  Plug 'nvim-telescope/telescope.nvim'
+  Plug 'nvim-treesitter/nvim-treesitter'
+  Plug 'kyazdani42/nvim-web-devicons'
+endif
 call plug#end()
 
 "" infinite, persisted undo
