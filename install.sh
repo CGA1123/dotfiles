@@ -9,7 +9,7 @@ CODESPACES=${CODESPACES:-""}
 # is_dev_environment checks whether the current box is a throwaway dev
 # environment, such as a codespace.
 function is_dev_environment() {
-  ([[ "$(logname)" == "build" ]] || [[ ! -z ${CODESPACES} ]]) && [[ -z "${DOTFILES_FULL_INSTALL}" ]]
+  [[ "$(logname)" == "build" ]] || [[ ! -z ${CODESPACES} ]]
 }
 
 # fstow will forcible run stow, moving any conflicting files/folders by
@@ -80,7 +80,7 @@ git submodule update --init --recursive
 # make sure some dirs exist
 mkdir -p ${HOME}/tmp
 
-if [[ ! is_dev_environment ]]; then
+if ! is_dev_environment; then
   # install homebrew, if it isn't already
   brew_installed > /dev/null 2>&1 || /bin/bash -c "$(curl -fsSL "https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh")"
 
@@ -99,6 +99,7 @@ else
   sudo apt-get update
   sudo apt-get install -y \
     vim \
+    nvim \
     silversearcher-ag \
     stow \
     ripgrep \
@@ -114,6 +115,7 @@ fstow git "${HOME}"
 fstow rspec "${HOME}"
 fstow tmux "${HOME}"
 fstow vim "${HOME}"
+fstow config "${HOME}"
 
 if [[ ! -z ${CODESPACES} ]]; then
   git config --global --unset url.ssh://git@github.com/.insteadof
@@ -121,7 +123,9 @@ if [[ ! -z ${CODESPACES} ]]; then
 fi
 
 
-if [[ ! is_dev_environment ]]; then
+if ! is_dev_environment; then
   # setup vim
   vim +PlugInstall +qall
+  # setup nvim
+  nvim +PlugInstall +qall
 fi
