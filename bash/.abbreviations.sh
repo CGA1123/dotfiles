@@ -27,7 +27,9 @@ function gc() {
 }
 
 function bb() {
-  local q=${1}
+  open "https://cs.github.com?q=${1}"
+}
 
-  open "https://blackbird.githubapp.com?q=${q}"
+function cs() {
+  open "https://cs.github.com?q=${1}"
 }
