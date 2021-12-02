@@ -17,6 +17,8 @@ alias be="bundle exec"
 alias v="vim"
 alias vi="vim"
 alias clr="clear"
+alias vim="nvim"
+alias vvim="/usr/bin/env vim"
 
 function gc() {
   local nwo="${1}"

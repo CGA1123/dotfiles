@@ -3,4 +3,5 @@ vim/.vim/plugged
 vim/.vim/undodir
 vim/.vim/view
 config/.config/coc/
+config/.config/gh/
 Brewfile.lock.json
