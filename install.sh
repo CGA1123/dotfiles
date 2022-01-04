@@ -99,7 +99,7 @@ else
   sudo apt-get update
   sudo apt-get install -y \
     vim \
-    nvim \
+    neovim \
     silversearcher-ag \
     stow \
     ripgrep \
