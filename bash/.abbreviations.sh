@@ -19,6 +19,7 @@ alias vi="vim"
 alias clr="clear"
 alias vim="nvim"
 alias vvim="/usr/bin/env vim"
+alias tf="terraform"
 
 function gc() {
   local nwo="${1}"
