@@ -17,7 +17,7 @@
   a = add
   s = status
   c = commit -v
-  cne = commit --amend --no-edit
+  can = commit --amend --no-edit
   b = branch
   co = checkout
   cb = checkout -b
