@@ -2,8 +2,8 @@
 
 set -euo pipefail
 
-RUBY_VERSION="2.7.2"
-NODE_VERSION="14.17.0"
+RUBY_VERSION="2.7.5"
+NODE_VERSION="16.14.0"
 CODESPACES=${CODESPACES:-""}
 
 # is_dev_environment checks whether the current box is a throwaway dev
