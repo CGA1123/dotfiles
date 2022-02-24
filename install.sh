@@ -80,6 +80,9 @@ git submodule update --init --recursive
 # make sure some dirs exist
 mkdir -p ${HOME}/tmp
 
+# add brew to path for this script
+export PATH="$(brew_dir)/bin:${PATH}"
+
 if ! is_dev_environment; then
   # install homebrew, if it isn't already
   brew_installed > /dev/null 2>&1 || /bin/bash -c "$(curl -fsSL "https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh")"
