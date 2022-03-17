@@ -18,7 +18,7 @@
   s = status
   c = commit -v
   can = commit --amend --no-edit
-  b = branch
+  b = branch --sort=-committerdate
   co = checkout
   cb = checkout -b
   d = diff --color-words
@@ -29,6 +29,7 @@
   pr = open-pull-request
   g = grep
   ctags = !.git/hooks/ctags
+  cp = cherry-pick
 [init]
   templatedir = ~/.git_template
   defaultBranch = main
