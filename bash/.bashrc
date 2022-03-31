@@ -31,3 +31,5 @@ export MCFLY_KEY_SCHEME=vim
 export MCFLY_FUZZY=true
 
 eval "$(mcfly init bash)"
+
+ulimit -n 2048
