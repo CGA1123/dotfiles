@@ -6,10 +6,17 @@ RUBY_VERSION="2.7.5"
 NODE_VERSION="16.14.0"
 CODESPACES=${CODESPACES:-""}
 
+function wait_for_apt_lock() {
+  # TODO: install sometimes fails due to other "stuff" running apt!
+  # should wait for the lock to be available before doing apt-stuff _or_
+  # migrate to using `aptdcon`?
+  # See: https://askubuntu.com/questions/132059/how-to-make-a-package-manager-wait-if-another-instance-of-apt-is-running
+}
+
 # is_dev_environment checks whether the current box is a throwaway dev
 # environment, such as a codespace.
 function is_dev_environment() {
-  [[ "$(logname)" == "build" ]] || [[ ! -z ${CODESPACES} ]]
+  [[ ! -z ${CODESPACES} ]] || [[ "$(logname)" == "build" ]]
 }
 
 # fstow will forcible run stow, moving any conflicting files/folders by
@@ -109,7 +116,7 @@ else
     exuberant-ctags
 
   sudo /bin/bash -c 'curl -sfLS install-node.vercel.app/lts | bash -s -- --yes'
-  sudo /bin/bash -c 'curl -LSfs https://raw.githubusercontent.com/cantino/mcfly/master/ci/install.sh | sh -s -- --git cantino/mcfly'
+  sudo /bin/bash -c 'curl -LSfs https://raw.githubusercontent.com/cantino/mcfly/master/ci/install.sh | sh -s -- --git cantino/mcfly --force'
 fi
 
 # setup dotfiles
