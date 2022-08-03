@@ -4,4 +4,7 @@ vim/.vim/undodir
 vim/.vim/view
 config/.config/coc/
 config/.config/gh/
+config/.config/flutter/
+config/.config/configstore/
+config/.config/iterm2/
 Brewfile.lock.json

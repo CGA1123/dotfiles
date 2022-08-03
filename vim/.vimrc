@@ -20,6 +20,7 @@ Plug 'tpope/vim-vinegar'
 Plug 'tpope/vim-surround'
 Plug 'vim-ruby/vim-ruby'
 Plug 'vim-test/vim-test'
+Plug 'meain/vim-jsontogo'
 
 if has('nvim')
   Plug 'pwntester/octo.nvim'
@@ -27,6 +28,7 @@ if has('nvim')
   Plug 'nvim-telescope/telescope.nvim'
   Plug 'nvim-treesitter/nvim-treesitter'
   Plug 'kyazdani42/nvim-web-devicons'
+  Plug 'ellisonleao/glow.nvim', {'branch': 'main'}
 endif
 call plug#end()
 
@@ -146,6 +148,7 @@ let g:go_highlight_extra_types = 1
 let g:go_highlight_build_constraints = 1
 let g:go_auto_type_info = 1
 let g:go_fmt_command = "goimports"
+let g:go_code_completion_enabled = 0
 
 autocmd Filetype go command! -bang A call go#alternate#Switch(<bang>0, 'edit')
 
@@ -192,3 +195,5 @@ nmap <silent> t<C-g> :TestVisit<CR>
 let test#strategy = "dispatch"
 
 set bg=light
+
+let g:glow_style = "light"
