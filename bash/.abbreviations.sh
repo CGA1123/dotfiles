@@ -21,7 +21,7 @@ alias vim="nvim"
 alias vvim="/usr/bin/env vim"
 
 function gc() {
-  local nwo="${1}"
+  local nwo="${1#"https://github.com/"}"
   local dst="${HOME}/${nwo}"
 
   mkdir -p "${dst}"
