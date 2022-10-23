@@ -7,4 +7,5 @@ config/.config/gh/
 config/.config/flutter/
 config/.config/configstore/
 config/.config/iterm2/
+config/.config/gh-dash
 Brewfile.lock.json
