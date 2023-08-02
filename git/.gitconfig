@@ -10,6 +10,7 @@
   editor = /usr/bin/env vim
   excludesfile = ~/.gitignore_global
   trustctime = false
+  commentChar = ";" # support writing markdown in commits.
 [github]
   user = CGA1123
 [alias]

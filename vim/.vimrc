@@ -21,8 +21,10 @@ Plug 'tpope/vim-surround'
 Plug 'vim-ruby/vim-ruby'
 Plug 'vim-test/vim-test'
 Plug 'meain/vim-jsontogo'
+Plug 'darfink/vim-plist'
 
 if has('nvim')
+  Plug 'dense-analysis/ale'
   Plug 'pwntester/octo.nvim'
   Plug 'nvim-lua/plenary.nvim'
   Plug 'nvim-telescope/telescope.nvim'
@@ -229,3 +231,10 @@ let test#strategy = "dispatch"
 set bg=light
 
 let g:glow_style = "light"
+
+" ALE
+let g:ale_linters = {'go': ['golangci-lint', 'gofmt', 'gopls']}
+
+" TODO: make this pretty...
+highlight ALEVirtualTextWarning guifg=Grey guibg=Yellow
+highlight ALEVirtualTextError guifg=#eaeaea guibg=#ff3333
