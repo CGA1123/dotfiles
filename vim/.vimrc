@@ -238,3 +238,6 @@ let g:ale_linters = {'go': ['golangci-lint', 'gofmt', 'gopls']}
 " TODO: make this pretty...
 highlight ALEVirtualTextWarning guifg=Grey guibg=Yellow
 highlight ALEVirtualTextError guifg=#eaeaea guibg=#ff3333
+
+" ctags
+set tags^=./.git/tags;
