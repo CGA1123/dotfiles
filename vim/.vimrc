@@ -234,6 +234,8 @@ let g:glow_style = "light"
 
 " ALE
 let g:ale_linters = {'go': ['golangci-lint', 'gofmt', 'gopls']}
+" https://github.com/dense-analysis/ale/issues/2339#issuecomment-1387257192
+let g:ale_go_golangci_lint_package = 1
 
 " TODO: make this pretty...
 highlight ALEVirtualTextWarning guifg=Grey guibg=Yellow
