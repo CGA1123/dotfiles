@@ -33,5 +33,6 @@ function bb() {
 }
 
 function cs() {
-  open "https://github.com/search?type=code&q=${1}"
+  local url="https://github.com/search?type=code&q=${1}"
+  open ${url}
 }
