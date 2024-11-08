@@ -15,7 +15,7 @@ PROMPT_COMMAND=prompter
 export BASH_SILENCE_DEPRECATION_WARNING=1
 
 export GOPATH=$(go env GOPATH)
-export PATH="${GOPATH}/bin:${PATH}"
+export PATH="${GOPATH}/bin:${PATH}:${HOME}/bin"
 export EDITOR=vim
 export DISABLE_SPRING=1
 

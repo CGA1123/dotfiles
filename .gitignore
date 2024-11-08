@@ -8,4 +8,6 @@ config/.config/flutter/
 config/.config/configstore/
 config/.config/iterm2/
 config/.config/gh-dash
+config/.config/AWS VPN Client/
+config/.config/AWSVPNClient/
 Brewfile.lock.json
