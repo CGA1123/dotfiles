@@ -33,5 +33,5 @@ function bb() {
 }
 
 function cs() {
-  open "https://cs.github.com?q=${1}"
+  open "https://github.com/search?type=code&q=${1}"
 }
