@@ -221,8 +221,11 @@ function ps1_prompt() {
     segment ${COLOUR_RED} ${COLOUR_GREY} " \$ "
   fi
 
-  segment ${COLOUR_GREY} ${COLOUR_LIGHT_GREY} " $(date +"%T") "
+  if [[ ! -z "${AWS_VAULT}" ]]; then
+    segment ${COLOUR_WHITE} ${COLOUR_RED} " ☁️ ${AWS_VAULT} "
+  fi
 
+  segment ${COLOUR_GREY} ${COLOUR_LIGHT_GREY} " $(date +"%T") "
   if [[ ! ${status} -eq 0 ]]; then
     segment ${COLOUR_RED} ${COLOUR_WHITE} "$(colour_bold) ! $(colour ${COLOUR_RESET})"
   elif jobs "%%" > /dev/null 2>&1; then
