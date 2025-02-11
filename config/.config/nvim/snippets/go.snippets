@@ -1,0 +1,35 @@
+snippet worker "river worker"
+// ${1:Job}Args defines the arguments for ${1}Worker.
+type ${1}Args struct {
+}
+
+// Kind defines the unique name for this job.
+func (${1}Args) Kind() string { return "${2:kind}" }
+
+// ${1}Worker ${3}
+type ${1}Worker struct {
+	river.WorkerDefaults[${1}Args]
+}
+
+// Work is the entrypoint for ${1}Worker.
+func (w *${1}Worker) Work(ctx context.Context, job *river.Job[${1}Args]) error {
+	${0}
+	return nil
+}
+endsnippet
+
+snippet cmd "cobra command"
+func cmd${1:Name}() *cobra.Command {
+	cmd := &cobra.Command{
+		Use: "${2:usage}",
+		Short: "${3:shortdesc}",
+		RunE: func(cmd *cobra.Command, args []string) error {
+			${0}
+
+			return nil
+		}
+	}
+}
+endsnippet
+
+# vim:ft=snippets:

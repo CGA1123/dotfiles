@@ -9,5 +9,11 @@
     "typescriptreact"
   ],
   "tsserver.formatOnType": true,
-  "coc.preferences.formatOnType": true
+  "coc.preferences.formatOnType": true,
+  "snippets.ultisnips.pythonPrompt": false,
+  "snippets.ultisnips.directories": [
+    "UltiSnips",
+    "gosnippets/UltiSnips",
+    "snippets"
+  ],
 }

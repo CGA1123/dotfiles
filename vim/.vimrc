@@ -159,9 +159,17 @@ autocmd Filetype go command! -bang A call go#alternate#Switch(<bang>0, 'edit')
 " coc.nvim
 let g:coc_global_extensions = [
   \ 'coc-solargraph',
-  \ 'coc-tsserver'
+  \ 'coc-tsserver',
+  \ 'coc-snippets'
   \ ]
 let g:coc_disable_startup_warning = 1
+let g:coc_snippet_next = '<c-j>'
+
+" Use <C-l> for trigger snippet expand.
+imap <C-l> <Plug>(coc-snippets-expand)
+
+" Use <C-j> for select text for visual placeholder of snippet.
+vmap <C-j> <Plug>(coc-snippets-select)
 
 if isdirectory('./node_modules') && isdirectory('./node_modules/prettier')
   let g:coc_global_extensions += ['coc-prettier']
