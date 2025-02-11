@@ -10,6 +10,7 @@ alias gs="g s"
 alias gd="g d"
 alias gds="g ds"
 alias push="git push --force-with-lease"
+alias gg="g g"
 
 # other
 alias b="bundle"
@@ -19,6 +20,11 @@ alias vi="vim"
 alias clr="clear"
 alias vim="nvim"
 alias vvim="/usr/bin/env vim"
+alias edit="fc"
+
+# k8s
+alias k="kubectl"
+
 
 function gc() {
   local nwo="${1#"https://github.com/"}"
