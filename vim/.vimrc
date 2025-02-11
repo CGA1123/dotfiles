@@ -24,6 +24,7 @@ Plug 'meain/vim-jsontogo'
 Plug 'darfink/vim-plist'
 
 if has('nvim')
+  Plug 'Exafunction/codeium.vim' " windsurf support.
   Plug 'dense-analysis/ale'
   Plug 'pwntester/octo.nvim'
   Plug 'nvim-lua/plenary.nvim'
@@ -251,3 +252,7 @@ highlight ALEVirtualTextError guifg=#eaeaea guibg=#ff3333
 
 " ctags
 set tags^=./.git/tags;
+
+if executable("rg")
+  set grepprg=rg\ --vimgrep
+endif

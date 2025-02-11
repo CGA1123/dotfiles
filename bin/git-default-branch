@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+
+set -euo pipefail
+
+REMOTE=${1:-"origin"}
+DEFAULT_REF=$(git rev-parse --abbrev-ref "${REMOTE}/HEAD")
+BRANCH_NAME=$(basename "${DEFAULT_REF}")
+
+git checkout "${BRANCH_NAME}"

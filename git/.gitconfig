@@ -22,6 +22,7 @@
   can = commit --amend --no-edit
   b = branch --sort=-committerdate
   co = checkout
+  cod = default-branch
   cb = checkout -b
   d = diff --color-words
   ds = diff --color-words --staged
