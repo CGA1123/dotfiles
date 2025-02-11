@@ -19,9 +19,6 @@ case "${KERNEL}-${ARCH}" in
 esac
 
 if command -v brew &> /dev/null; then
-
-  source "$(brew --prefix asdf)/libexec/asdf.sh"
-  source "$(brew --prefix asdf)/etc/bash_completion.d/asdf.bash"
   source "$(brew --prefix)/etc/profile.d/bash_completion.sh"
 fi
 

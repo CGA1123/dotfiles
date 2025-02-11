@@ -49,6 +49,15 @@ function brew_installed() {
   esac
 }
 
+function asdf_install() {
+  if asdf list "${1}" "${2}" 2> /dev/null > /dev/null; then
+    echo "${1} ${2} is already installed"
+    return 0
+  fi
+
+  asdf install "${1}" "${2}"
+}
+
 function brew_dir() {
   local KERNEL=$(uname -s)
   local ARCH=$(uname -p)
@@ -93,10 +102,10 @@ if ! is_dev_environment; then
   asdf_plugin_install "ruby"
   asdf_plugin_install "nodejs"
 
-  asdf install ruby "${RUBY_VERSION}"
+  asdf_install ruby "${RUBY_VERSION}"
   asdf global ruby "${RUBY_VERSION}"
 
-  asdf install nodejs "${NODE_VERSION}"
+  asdf_install nodejs "${NODE_VERSION}"
   asdf global nodejs "${NODE_VERSION}"
 else
   sudo apt-get update

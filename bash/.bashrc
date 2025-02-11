@@ -14,8 +14,10 @@ PROMPT_COMMAND=prompter
 # tell macOS to stop telling me about zsh
 export BASH_SILENCE_DEPRECATION_WARNING=1
 
+DOTFILES_DIR=$(dirname $(dirname $(readlink -f ${BASH_SOURCE[0]})))
+
 export GOPATH=$(go env GOPATH)
-export PATH="${GOPATH}/bin:${PATH}:${HOME}/bin"
+export PATH="${GOPATH}/bin:${PATH}:${HOME}/bin:${DOTFILES_DIR}/script"
 export EDITOR=vim
 export DISABLE_SPRING=1
 
