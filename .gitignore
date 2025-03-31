@@ -2,12 +2,6 @@ tmux/.tmux/plugins
 vim/.vim/plugged
 vim/.vim/undodir
 vim/.vim/view
-config/.config/coc/
-config/.config/gh/
-config/.config/flutter/
-config/.config/configstore/
-config/.config/iterm2/
-config/.config/gh-dash
-config/.config/AWS VPN Client/
-config/.config/AWSVPNClient/
+config/.config/*
+!config/.config/nvim
 Brewfile.lock.json
