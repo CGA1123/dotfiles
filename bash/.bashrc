@@ -15,9 +15,10 @@ PROMPT_COMMAND=prompter
 export BASH_SILENCE_DEPRECATION_WARNING=1
 
 DOTFILES_DIR=$(dirname $(dirname $(readlink -f ${BASH_SOURCE[0]})))
+ASDF_DATA_DIR="${HOME}/.asdf"
 
 export GOPATH=$(go env GOPATH)
-export PATH="${GOPATH}/bin:${PATH}:${HOME}/bin:${DOTFILES_DIR}/script"
+export PATH="${ASDF_DATA_DIR}/shims:${GOPATH}/bin:${PATH}:${HOME}/bin:${DOTFILES_DIR}/script"
 export EDITOR=vim
 export DISABLE_SPRING=1
 
