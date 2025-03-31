@@ -20,7 +20,7 @@
   s = status
   c = commit -v
   can = commit --amend --no-edit
-  b = branch --sort=-committerdate
+  b = branch
   co = checkout
   cod = default-branch
   cb = checkout -b
@@ -37,19 +37,33 @@
 [init]
   templatedir = ~/.git_template
   defaultBranch = main
+[diff]
+  algorithm = histogram
+  colorMoved = plain
+  mnemonicPrefix = true
+  renames = true
 [push]
   default = current
 [branch]
+  sort = -committerdate
   autosetuprebase = always
   autosetupmerge = always
 [pull]
-	ff = only
+  ff = only
+  rebase = true
+[fetch]
+  prune = true
+  pruneTags = true
+  all = true
+[rerere]
+  enabled = true
+  autoupdate = true
 [credential]
-	helper = osxkeychain
+  helper = osxkeychain
 [url "ssh://git@github.com/"]
-	insteadOf = https://github.com/
+  insteadOf = https://github.com/
 [filter "lfs"]
-	required = true
-	clean = git-lfs clean -- %f
-	smudge = git-lfs smudge -- %f
-	process = git-lfs filter-process
+  required = true
+  clean = git-lfs clean -- %f
+  smudge = git-lfs smudge -- %f
+  process = git-lfs filter-process
