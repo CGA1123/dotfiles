@@ -19,7 +19,7 @@ case "${KERNEL}-${ARCH}" in
 esac
 
 if command -v brew &> /dev/null; then
-  source "$(brew --prefix)/etc/profile.d/bash_completion.sh"
+  [[ -r "$(brew --prefix)/etc/profile.d/bash_completion.sh" ]] && . "$(brew --prefix)/etc/profile.d/bash_completion.sh"
 fi
 
 source "${HOME}/.bashrc"
