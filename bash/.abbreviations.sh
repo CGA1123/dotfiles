@@ -25,6 +25,8 @@ alias edit="fc"
 # k8s
 alias k="kubectl"
 
+# unbork resets tty settings after some binary might have messed it up.
+alias unbork="stty sane"
 
 function gc() {
   local nwo="${1#"https://github.com/"}"
