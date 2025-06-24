@@ -19,16 +19,13 @@ func (w *${1}Worker) Work(ctx context.Context, job *river.Job[${1}Args]) error {
 endsnippet
 
 snippet cmd "cobra command"
-func cmd${1:Name}() *cobra.Command {
-	cmd := &cobra.Command{
-		Use: "${2:usage}",
-		Short: "${3:shortdesc}",
-		RunE: func(cmd *cobra.Command, args []string) error {
-			${0}
+&cobra.Command{
+	Use: "${1:usage}",
+	RunE: func(cmd *cobra.Command, args []string) error {
+		${0}
 
-			return nil
-		}
-	}
+		return nil
+	},
 }
 endsnippet
 
