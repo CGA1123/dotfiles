@@ -2,9 +2,6 @@ source "${HOME}/.colour.sh"
 source "${HOME}/.abbreviations.sh"
 source "${HOME}/.prompt.sh"
 
-# put local config and config that shouldn't be checked into git into local.sh
-[[ -f "${HOME}/.local.sh" ]] && source "${HOME}/.local.sh"
-
 function prompter() {
   export PS1="$(ps1_prompt)"
 }
@@ -24,18 +21,25 @@ export DISABLE_SPRING=1
 
 ## History
 # Avoid duplicates
-HISTCONTROL=ignoredups:erasedups
+HISTSIZE=50000
+HISTFILESIZE=10000
+HISTCONTROL="ignoredups"
+HISTIGNORE="clear:history:[bf]g:exit:date"
+
 # When the shell exits, append to the history file instead of overwriting it
 shopt -s histappend
 
-touch "${HOME}/.bash_history"
-
-# After each command, append to the history file and reread it
-PROMPT_COMMAND="${PROMPT_COMMAND:+$PROMPT_COMMAND$'\n'}history -a; history -c; history -r"
+function historymerge {
+    history -n; history -w; history -c; history -r;
+}
+trap historymerge EXIT
 
 export MCFLY_KEY_SCHEME=vim
-export MCFLY_FUZZY=true
+export MCFLY_FUZZY=2
 
 eval "$(mcfly init bash)"
 
 ulimit -n 2048
+
+# put local config and config that shouldn't be checked into git into local.sh
+[[ -f "${HOME}/.local.sh" ]] && source "${HOME}/.local.sh"
