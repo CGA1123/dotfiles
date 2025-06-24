@@ -24,7 +24,6 @@ Plug 'meain/vim-jsontogo'
 Plug 'darfink/vim-plist'
 
 if has('nvim')
-  Plug 'Exafunction/codeium.vim' " windsurf support.
   Plug 'dense-analysis/ale'
   Plug 'pwntester/octo.nvim'
   Plug 'nvim-lua/plenary.nvim'
